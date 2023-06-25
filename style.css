@@ -12,8 +12,8 @@
   
 .game{
     position: absolute;
-    background-color: #f3cf00;
-    padding: 10px;
+    background-color: #222016;
+    padding: 5px;
     left: 50%;
     translate: -50% 0;
     border-radius: 10px;
@@ -32,19 +32,19 @@
 
 .dead {
  
- height: 40px;
- width: 40px;
+ height: 30px;
+ width: 30px;
  background-color: gray;
 }
 
 .alive{
- height: 40px;
- width: 40px;
+ height: 30px;
+ width: 30px;
  background-color: rgb(12, 199, 43);
 }
 
 .attack{
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   background-color: red;
 }
