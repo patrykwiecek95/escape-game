@@ -140,11 +140,6 @@ const moveAttackCell = () => {
       currentRow = [];
     }
   }
-  console.log(newArray);
-  console.log(
-    "sprawdzanie mozliwe komiarki obok dla tablicy attackCellArray",
-    attackCellArray
-  );
   attackCellArray.forEach((element) => {
     let i = element[0];
     let j = element[1];
@@ -159,8 +154,6 @@ const moveAttackCell = () => {
       { row: i + 1, cell: j + 1 },
     ];
     let test = [];
-
-    console.log(element);
     directions.forEach((direction) => {
       const { row, cell } = direction;
       if (
@@ -172,14 +165,8 @@ const moveAttackCell = () => {
       ) {
         let xxx = newArray[row][cell];
         test.push([parseInt(xxx[0]), parseInt(xxx[1])]);
-        console.log("+moga byc aktywowane", direction);
-        // console.log("żyjąca komórka", newArray[row][cell]);
       } else {
-        console.log("-nie moga byc aktywowane", direction);
       }
-      // if (test.length === 0) {
-      //   console.log("pusta tablica dla elementu", element);
-      // }
     });
 
     if (test.length > 0) {
@@ -189,22 +176,14 @@ const moveAttackCell = () => {
 
     test = [];
   });
-  console.log("tablice mozliwosc dla daneych komórek", cellToBeAttack);
 };
 
 const changeattackcell = () => {
   attackCellArray = [];
-  console.log(
-    "sprawdzanie w changeataccl tablicy celltobeattack",
-    cellToBeAttack
-  );
   cellToBeAttack.forEach((element) => {
-    // console.log("elemenet!!!!!!!!!", element);
     let currentElement = element[Math.floor(Math.random() * element.length)];
-    // console.log("current element", currentElement);
     attackCellArray.push([currentElement[0], currentElement[1]]);
   });
-  console.log("komorki atakuje do zmiany", attackCellArray);
   RandomCellAttack();
   moveAttackCell();
 };
